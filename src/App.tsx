@@ -11,7 +11,6 @@ import {
   CheckCircle2,
   Award,
   X,
-  Send,
   BookOpen,
   Briefcase,
   GraduationCap,
@@ -164,20 +163,6 @@ export function App() {
   const [activePage, setActivePage] = useState<string>('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
-  // Modal State
-  const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
-  const [selectedService, setSelectedService] = useState<string>('General Counselling');
-
-  // Form State
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    category: 'counselling',
-    message: ''
-  });
-
   const focusAreas = [
     { title: 'Mental Health & Psychological Well-being', icon: <Brain size={22} />, desc: 'Promoting emotional resilience and psychological wellness across all sections of society.' },
     { title: 'Counselling & Psychotherapy', icon: <Heart size={22} />, desc: 'Professional, ethical, and confidential support tailored to individual and family needs.' },
@@ -241,21 +226,6 @@ export function App() {
     setActivePage(pageId);
     setIsMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  const openModalWithService = (serviceName: string) => {
-    setSelectedService(serviceName);
-    setIsModalOpen(true);
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setIsModalOpen(false);
-      setFormData({ name: '', email: '', phone: '', category: 'counselling', message: '' });
-    }, 2800);
   };
 
   return (
@@ -372,7 +342,7 @@ export function App() {
             id="nav-volunteer-btn"
             className="btn btn-secondary-white"
             style={{ padding: '6px 14px', fontSize: '0.82rem' }}
-            onClick={() => openModalWithService('Become a Volunteer Registration')}
+            onClick={() => navigateToPage('involved')}
           >
             Become a Volunteer
           </button>
@@ -380,7 +350,7 @@ export function App() {
             id="nav-donate-btn"
             className="btn btn-primary-filled"
             style={{ padding: '6px 16px', fontSize: '0.82rem' }}
-            onClick={() => openModalWithService('Donate to Mental Health Initiatives')}
+            onClick={() => navigateToPage('contact')}
           >
             Donate Now <ArrowRight size={13} />
           </button>
@@ -413,14 +383,14 @@ export function App() {
             <button
               className="btn btn-secondary-white"
               style={{ width: '100%', justifyContent: 'center' }}
-              onClick={() => { setIsMobileMenuOpen(false); openModalWithService('Become a Volunteer Registration'); }}
+              onClick={() => navigateToPage('involved')}
             >
               Become a Volunteer
             </button>
             <button
               className="btn btn-primary-filled"
               style={{ width: '100%', justifyContent: 'center' }}
-              onClick={() => { setIsMobileMenuOpen(false); openModalWithService('Donate to Mental Health Initiatives'); }}
+              onClick={() => navigateToPage('contact')}
             >
               Donate Now <ArrowRight size={14} />
             </button>
@@ -452,14 +422,14 @@ export function App() {
                 <button
                   id="hero-donate-btn"
                   className="btn btn-primary-filled"
-                  onClick={() => openModalWithService('Donate to Mental Health Initiatives')}
+                  onClick={() => navigateToPage('contact')}
                 >
                   Donate Now <ArrowRight size={16} />
                 </button>
                 <button
                   id="hero-volunteer-btn"
                   className="btn btn-secondary-white"
-                  onClick={() => openModalWithService('Become a Volunteer Registration')}
+                  onClick={() => navigateToPage('involved')}
                 >
                   Become a Volunteer →
                 </button>
@@ -799,7 +769,7 @@ export function App() {
                     <button
                       className="btn btn-secondary-white"
                       style={{ padding: '4px 12px', fontSize: '0.78rem', borderRadius: 'var(--radius-pill)' }}
-                      onClick={() => openModalWithService(service)}
+                      onClick={() => navigateToPage('contact')}
                     >
                       Book →
                     </button>
@@ -875,7 +845,7 @@ export function App() {
                       id={`involved-opt-btn-${idx}`}
                       className="btn btn-secondary-white"
                       style={{ width: '100%', justifyContent: 'center', fontSize: '0.88rem' }}
-                      onClick={() => openModalWithService(`Get Involved: ${opt.title}`)}
+                      onClick={() => navigateToPage('contact')}
                     >
                       Participate / Inquire →
                     </button>
@@ -922,166 +892,43 @@ export function App() {
         )}
       </main>
 
-      {/* MODAL POPUP (Counselling / Support Inquiry) */}
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={() => setIsModalOpen(false)}>
-          <div className="modal-content animate-float" onClick={(e) => e.stopPropagation()} style={{ background: '#ffffff', color: 'var(--text-primary)' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
-              <h3 style={{ fontSize: '1.4rem', fontFamily: 'var(--font-serif)', color: 'var(--accent-purple)' }}>
-                Manasdeep Foundation Request
-              </h3>
-              <button
-                id="modal-close-btn"
-                className="btn btn-secondary-white"
-                style={{ width: '36px', height: '36px', padding: 0, justifyContent: 'center' }}
-                onClick={() => setIsModalOpen(false)}
-              >
-                <X size={18} />
-              </button>
+      {/* COMPACT SMALL FOOTER */}
+      <footer className="site-footer">
+        <div className="footer-compact-container">
+          <div className="footer-brand-info">
+            <div className="brand-icon" style={{ width: '32px', height: '32px', fontSize: '0.95rem' }}>M</div>
+            <div>
+              <div style={{ fontWeight: 600, color: 'var(--accent-purple)', fontSize: '0.92rem' }}>Manasdeep Foundation</div>
+              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>© {new Date().getFullYear()} All rights reserved.</div>
             </div>
-
-            <div style={{ background: 'var(--accent-purple-bg)', padding: '0.6rem 1rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(84, 48, 138, 0.2)', marginBottom: '1.25rem', fontSize: '0.88rem', color: 'var(--accent-purple)', fontWeight: 600 }}>
-              Target Initiative: {selectedService}
-            </div>
-
-            {formSubmitted ? (
-              <div style={{ textAlign: 'center', padding: '2rem 1rem', color: 'var(--accent-purple)' }}>
-                <CheckCircle2 size={52} style={{ margin: '0 auto 1rem', color: 'var(--accent-green)' }} />
-                <h4 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>Thank You!</h4>
-                <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-                  Your confidential message has been received. Our counsellors will reach out to you within 24 hours.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit}>
-                <div style={{ marginBottom: '1rem' }}>
-                  <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, marginBottom: '0.35rem' }}>
-                    Full Name
-                  </label>
-                  <input
-                    id="modal-form-name"
-                    type="text"
-                    className="input-field-clean"
-                    placeholder="Your Name"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  />
-                </div>
-
-                <div style={{ marginBottom: '1rem' }}>
-                  <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, marginBottom: '0.35rem' }}>
-                    Email Address
-                  </label>
-                  <input
-                    id="modal-form-email"
-                    type="email"
-                    className="input-field-clean"
-                    placeholder="yourname@domain.com"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
-                </div>
-
-                <div style={{ marginBottom: '1rem' }}>
-                  <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, marginBottom: '0.35rem' }}>
-                    Phone Number
-                  </label>
-                  <input
-                    id="modal-form-phone"
-                    type="tel"
-                    className="input-field-clean"
-                    placeholder="+91 98765 43210"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  />
-                </div>
-
-                <div style={{ marginBottom: '1.25rem' }}>
-                  <label style={{ display: 'block', fontSize: '0.88rem', fontWeight: 600, marginBottom: '0.35rem' }}>
-                    How can Manasdeep Foundation support you?
-                  </label>
-                  <textarea
-                    id="modal-form-message"
-                    className="input-field-clean"
-                    style={{ borderRadius: 'var(--radius-md)', height: '80px' }}
-                    placeholder="Provide preferred timing or specific request..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  ></textarea>
-                </div>
-
-                <button id="modal-form-submit-btn" type="submit" className="btn btn-primary-filled" style={{ width: '100%', justifyContent: 'center' }}>
-                  <Send size={16} /> Send Confidential Message
-                </button>
-              </form>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* FOOTER */}
-      <footer id="contact" className="site-footer">
-        <div className="footer-watermark">manasdeep</div>
-
-        <div className="footer-container">
-          {/* Column 1: EXPLORE */}
-          <div>
-            <h4 className="footer-section-title">EXPLORE</h4>
-            <ul className="footer-link-list">
-              <li><a className="footer-link-item" onClick={() => navigateToPage('about')}>About Us</a></li>
-              <li><a className="footer-link-item" onClick={() => navigateToPage('board')}>Board of Directors</a></li>
-              <li><a className="footer-link-item" onClick={() => navigateToPage('leadership')}>Leadership Team</a></li>
-              <li><a className="footer-link-item" onClick={() => navigateToPage('objectives')}>Our Objectives</a></li>
-              <li><a className="footer-link-item" onClick={() => navigateToPage('services')}>Our Services</a></li>
-              <li><a className="footer-link-item" onClick={() => navigateToPage('why')}>Why Choose Us</a></li>
-              <li><a className="footer-link-item" onClick={() => navigateToPage('involved')}>Get Involved</a></li>
-              <li><a className="footer-link-item" onClick={() => navigateToPage('contact')}>Contact Us</a></li>
-            </ul>
           </div>
 
-          {/* Column 2: REACH US */}
-          <div>
-            <h4 className="footer-section-title">REACH US</h4>
-            <div className="footer-contact-list">
-              <div className="footer-contact-item">
-                <MapPin size={22} className="footer-contact-icon" />
-                <span>Pune, Maharashtra, India</span>
-              </div>
+          <ul className="footer-links-inline">
+            <li><a onClick={() => navigateToPage('about')}>About Us</a></li>
+            <li><a onClick={() => navigateToPage('board')}>Board of Directors</a></li>
+            <li><a onClick={() => navigateToPage('leadership')}>Leadership Team</a></li>
+            <li><a onClick={() => navigateToPage('objectives')}>Objectives</a></li>
+            <li><a onClick={() => navigateToPage('services')}>Services</a></li>
+            <li><a onClick={() => navigateToPage('involved')}>Get Involved</a></li>
+            <li><a onClick={() => navigateToPage('contact')}>Contact</a></li>
+          </ul>
 
-              <div className="footer-contact-item">
-                <Phone size={22} className="footer-contact-icon" />
-                <div>
-                  <div>+91 70836 11222</div>
-                  <div style={{ marginTop: '0.2rem' }}>+91 88052 63733</div>
-                </div>
-              </div>
-
-              <div className="footer-contact-item">
-                <Mail size={22} className="footer-contact-icon" />
-                <a href="mailto:contact@manasdeepfoundation.org" style={{ color: '#e2e8f0', textDecoration: 'none' }}>
-                  contact@manasdeepfoundation.org
-                </a>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="footer-social-links">
-              <a href="#" className="footer-social-icon-btn" aria-label="Instagram">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <div className="footer-right-details">
+            <span>+91 70836 11222 • Pune</span>
+            <div style={{ display: 'flex', gap: '0.5rem' }}>
+              <a href="#" style={{ color: 'var(--text-muted)' }} aria-label="Instagram">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
               </a>
-              <a href="#" className="footer-social-icon-btn" aria-label="Facebook">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a href="#" style={{ color: 'var(--text-muted)' }} aria-label="Facebook">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
               </a>
-              <a href="#" className="footer-social-icon-btn" aria-label="LinkedIn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a href="#" style={{ color: 'var(--text-muted)' }} aria-label="LinkedIn">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
@@ -1089,11 +936,6 @@ export function App() {
               </a>
             </div>
           </div>
-        </div>
-
-        <div className="footer-bottom-bar">
-          <div>© {new Date().getFullYear()} Manasdeep Foundation. All rights reserved.</div>
-          <div>Empowering Minds • Enriching Lives</div>
         </div>
       </footer>
     </div>
