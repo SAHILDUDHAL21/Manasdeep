@@ -26,6 +26,16 @@ import {
   Menu
 } from 'lucide-react';
 import mlogo from './assets/mlogo.jpeg';
+import imgRushikeshIngulkar from './assets/Rushikesh Ingulkar.jpeg';
+import imgShubhamShinde from './assets/Shubham Shinde (President).jpeg';
+import imgRushikeshKakade from './assets/Rushikesh Kakade (VP).jpeg';
+import imgShivtejIngulkar from './assets/Shivtej Ingulkar.jpeg';
+import imgDikshaIngulkar from './assets/Diksha Ingulkar.jpeg';
+import imgShashankSaraf from './assets/Shashank Saraf.jpeg';
+import imgSameerKedar from './assets/Sameer Kedar.jpeg';
+import imgBhagwatKate from './assets/Bhagwat Kate.jpeg';
+import imgNageshGawali from './assets/NageshGawali (Counselor).jpeg';
+import imgRushikeshMadale from './assets/Rushikesh Madale.jpeg';
 import './App.css';
 
 const boardMembers = [
@@ -34,6 +44,7 @@ const boardMembers = [
     name: 'Rushikesh Ingulkar',
     role: 'Founder & Visionary',
     badge: 'Founder & Visionary, Manasdeep Foundation',
+    image: imgRushikeshIngulkar,
     bio: [
       'Mr. Rushikesh Ingulkar is a Psychology professional, educator, counsellor, EAP practitioner, and social entrepreneur dedicated to making psychological awareness and support more accessible to communities that are often overlooked.',
       'With experience in higher education, psychology teaching, counselling, employee assistance programmes (EAP), psychological assessment, student guidance, and community-based awareness initiatives, Rushikesh has worked closely with students, employees, and individuals from diverse social and economic backgrounds. His professional journey has provided him with a practical understanding of the psychological, educational, and social challenges faced by individuals and communities.',
@@ -49,6 +60,7 @@ const boardMembers = [
     name: 'Mr. Shubham Shinde',
     role: 'President',
     badge: 'President, Manasdeep Foundation',
+    image: imgShubhamShinde,
     bio: [
       'Mr. Shubham Shinde is a dedicated social contributor and an experienced professional with a diverse career journey across various fields. Having completed his education and gained valuable professional experience, he has developed a broad understanding of people, communities, and the challenges faced by society.',
       'Driven by a strong desire to give back to society and contribute towards meaningful social change, Shubham actively participates in social awareness initiatives and community-oriented activities. His approach combines practical experience, compassion, and a strong sense of responsibility towards society.',
@@ -63,6 +75,7 @@ const boardMembers = [
     name: 'Mr. Rushikesh Kakade',
     role: 'Vice President',
     badge: 'Vice President, Manasdeep Foundation',
+    image: imgRushikeshKakade,
     bio: [
       'Mr. Rushikesh Kakade, a postgraduate in Master of Social Work (MSW), is actively committed to supporting students and individuals from tribal and economically disadvantaged communities.',
       'Through his work, he focuses on student development, youth empowerment, career guidance, and social support, helping young individuals identify opportunities and make informed decisions about their education and future.',
@@ -75,6 +88,7 @@ const boardMembers = [
     name: 'Mr. Shivtej Ingulkar',
     role: 'Secretary',
     badge: 'Secretary, Manasdeep Foundation',
+    image: imgShivtejIngulkar,
     bio: [
       'Mr. Shivtej Ingulkar is a seasoned journalist and social observer with over 15+ years of professional experience in journalism, covering a wide range of issues including crime, politics, public affairs, and matters concerning society and communities.',
       'Throughout his career, he has developed a strong understanding of social challenges through close interaction with people and extensive field experience. His professional journey has also provided him with valuable exposure to the healthcare sector and community-related services, strengthening his understanding of the needs and challenges faced by individuals and families.',
@@ -87,6 +101,7 @@ const boardMembers = [
     name: 'Ms. Diksha Ingulkar',
     role: 'Treasurer',
     badge: 'Treasurer, Manasdeep Foundation',
+    image: imgDikshaIngulkar,
     bio: [
       'Ms. Diksha Ingulkar is an MBA graduate and corporate professional with over 6+ years of experience in the corporate sector. Alongside her professional career, she has developed a strong commitment towards women empowerment and addressing women-centric social issues.',
       'With her corporate expertise, organizational skills, financial understanding, and responsible approach, she contributes significantly to the effective functioning and development of Manasdeep Foundation. Her compassionate and helpful nature motivates her to actively support individuals and communities in need.',
@@ -102,6 +117,7 @@ const leadershipTeam = [
     name: 'Rushikesh Ingulkar',
     role: 'Founder & Visionary',
     badge: 'Founder & Visionary, Manasdeep Foundation',
+    image: imgRushikeshIngulkar,
     bio: 'Rushikesh Ingulkar is a Psychology professional, educator, counsellor, and EAP practitioner committed to making mental-health support accessible to all. With experience in higher education, counselling, psychological assessment, and workplace well-being, he has worked with diverse communities and individuals. As the founder of Manasdeep Foundation, he is dedicated to promoting psychological awareness, life skills, career guidance, addiction prevention, and community well-being, especially among underserved and rural populations.'
   },
   {
@@ -109,6 +125,7 @@ const leadershipTeam = [
     name: 'Shashank Saraf',
     role: 'Psychology Advisor',
     badge: 'Psychology Advisor',
+    image: imgShashankSaraf,
     credentials: 'M.A. Clinical Psychology & Counselling Psychology Professional',
     bio: 'Psychology Advisor with expertise across psychological services, counselling, employee assistance programs, and community mental health outreach.',
     areas: ['Psychological Services', 'Counselling', 'EAP', 'Community Mental Health'],
@@ -119,6 +136,7 @@ const leadershipTeam = [
     name: 'Sameer Sadanand Kedar',
     role: 'Managing Director',
     badge: 'Managing Director | Psychologist & Counsellor',
+    image: imgSameerKedar,
     bio: 'Sameer Sadanand Kedar is a Psychologist and Counsellor with professional experience in mental health, palliative care, counselling, and community-based psychological support. He has expertise in psychosocial assessment, counselling, crisis intervention, grief support, and career guidance. As the Managing Director of the Foundation, he is committed to strengthening mental health awareness, promoting holistic well-being, and developing accessible support initiatives for individuals, families, and communities.',
     areas: ['Mental Health', 'Counselling', 'Palliative Care', 'Youth & Career Guidance', 'Community Mental Health', 'Psychosocial Support'],
     areaLabel: 'Areas of Focus'
@@ -128,6 +146,7 @@ const leadershipTeam = [
     name: 'Bhagwat Laxman Kate',
     role: 'Team Leader',
     badge: 'Team Leader | Psychologist & Counsellor',
+    image: imgBhagwatKate,
     bio: 'Mr. Bhagwat Laxman Kate is a Clinical Psychologist and Counsellor with professional experience in mental health, psychological counselling, community-based mental health services, psychosocial support, and mental health research. He holds a Master’s degree in Clinical Psychology and has worked across community, academic, research, and mental health-focused settings. He has been associated with the National Mental Health Survey-2 (NMHS-2) at B.J. Government Medical College & Sassoon General Hospital, Pune, where he contributed to community-based mental health research and participated in training on structured psychiatric assessment based on ICD-11. His professional experience also includes counselling and coordination at Swa-Roopwardhinee, as well as working as a Project Technical Support-III (Psychologist) at Bharati Vidyapeeth\'s Interactive Research School for Health Affairs (IRSHA) on an ICMR-funded neurodevelopmental research project. Through his work in counselling and digital mental health support, including his association with Health Genni, he has developed experience in providing accessible psychological support and counselling services to individuals from diverse backgrounds.',
     areas: ['Mental Health', 'Psychological Counselling', 'Community Mental Health', 'Psychosocial Support', 'Mental Health Research', 'Psychological Assessment', 'Child & Adolescent Mental Health', 'Neurodevelopmental Support', 'Career & Educational Guidance'],
     areaLabel: 'Areas of Focus'
@@ -137,6 +156,7 @@ const leadershipTeam = [
     name: 'Mr. Nagesh Gawali',
     role: 'Counselling Psychologist',
     badge: 'Counselling Psychologist | Manasdeep Foundation',
+    image: imgNageshGawali,
     bio: 'Nagesh Gawali is a Counselling Psychologist with a Master’s degree in Clinical Psychology and a Postgraduate Diploma in Guidance and Counselling. He is committed to providing professional, compassionate, and client-centred psychological support to individuals navigating personal, emotional, behavioural, and interpersonal challenges. At Manasdeep Foundation, he contributes to counselling services, psychological awareness initiatives, and community-based mental health programs. His approach focuses on creating a safe, empathetic, confidential, and non-judgmental environment where individuals can express themselves openly, gain greater self-understanding, and develop healthier ways of coping with life’s challenges. His counselling approach is client-centred and evidence-informed, with an emphasis on practical coping strategies, emotional well-being, self-awareness, and sustainable personal growth. Through his work, he aims to promote greater awareness of mental health and make psychological support more accessible and approachable within the community.',
     areas: ['Individual Counselling & Psychological Support', 'Emotional Well-being & Stress Management', 'Personal Growth & Self-Awareness', 'Guidance & Counselling', 'Mental Health Awareness Programs'],
     areaLabel: 'Areas of Contribution'
@@ -146,6 +166,7 @@ const leadershipTeam = [
     name: 'Rushikesh Madale',
     role: 'Counselor',
     badge: 'Counselor | Manasdeep Foundation',
+    image: imgRushikeshMadale,
     bio: 'Rushikesh Madale is a Clinical Psychology postgraduate with an M.A. in Clinical Psychology and a PG Diploma in Guidance and Counselling Psychology. He has experience in career counselling, student guidance, counselling, and awareness workshops. With a compassionate and client-centred approach, he focuses on understanding individual needs and building meaningful rapport. His work is dedicated to supporting individuals in their personal growth, academic development, and career planning.',
     areas: ['Career Counselling', 'Student Guidance', 'Counselling', 'Awareness Workshops', 'Personal Development', 'Academic & Career Support'],
     areaLabel: 'Areas of Focus'
@@ -246,7 +267,7 @@ export function App() {
       {/* Main Header / Clean White Navbar */}
       <header className="site-header">
         <div className="brand-logo" onClick={() => navigateToPage('home')}>
-          <div className="brand-icon">M</div>
+          <img src={mlogo} alt="Manasdeep Foundation Logo" className="brand-logo-img" />
           <div>
             <div className="brand-text-title">Manasdeep Foundation</div>
             <div className="brand-text-sub">Empowering Minds, Enriching Lives.</div>
@@ -597,9 +618,13 @@ export function App() {
                   {boardMembers.slice(0, 2).map((member) => (
                     <div key={member.id} className="board-featured-card">
                       <div className="board-member-header">
-                        <div className="board-avatar-circle">
-                          <User size={28} />
-                        </div>
+                        {member.image ? (
+                          <img src={member.image} alt={member.name} className="board-avatar-img" />
+                        ) : (
+                          <div className="board-avatar-circle">
+                            <User size={28} />
+                          </div>
+                        )}
                         <div>
                           <h3 className="board-member-name">{member.name}</h3>
                           <div className="board-role-badge">{member.badge}</div>
@@ -633,9 +658,13 @@ export function App() {
                   {boardMembers.slice(2).map((member) => (
                     <div key={member.id} className="board-compact-card">
                       <div className="board-member-header">
-                        <div className="board-avatar-circle" style={{ width: '48px', height: '48px', fontSize: '1.1rem' }}>
-                          <User size={22} />
-                        </div>
+                        {member.image ? (
+                          <img src={member.image} alt={member.name} className="board-compact-avatar-img" />
+                        ) : (
+                          <div className="board-avatar-circle" style={{ width: '56px', height: '56px', fontSize: '1.1rem' }}>
+                            <User size={22} />
+                          </div>
+                        )}
                         <div>
                           <h3 className="board-member-name" style={{ fontSize: '1.3rem' }}>{member.name}</h3>
                           <div className="board-role-badge">{member.badge}</div>
@@ -672,9 +701,13 @@ export function App() {
                   <div key={leader.id} className="leadership-card">
                     <div>
                       <div className="leadership-card-top">
-                        <div className="leadership-avatar-icon">
-                          <User size={24} />
-                        </div>
+                        {leader.image ? (
+                          <img src={leader.image} alt={leader.name} className="leadership-avatar-img" />
+                        ) : (
+                          <div className="leadership-avatar-icon">
+                            <User size={24} />
+                          </div>
+                        )}
                         <div>
                           <h3 className="leadership-name">{leader.name}</h3>
                           <div className="leadership-badge">{leader.badge}</div>
@@ -896,7 +929,7 @@ export function App() {
       <footer className="site-footer">
         <div className="footer-compact-container">
           <div className="footer-brand-info">
-            <div className="brand-icon" style={{ width: '32px', height: '32px', fontSize: '0.95rem' }}>M</div>
+            <img src={mlogo} alt="Manasdeep Foundation Logo" className="footer-logo-img" />
             <div>
               <div style={{ fontWeight: 600, color: 'var(--accent-purple)', fontSize: '0.92rem' }}>Manasdeep Foundation</div>
               <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>© {new Date().getFullYear()} All rights reserved.</div>

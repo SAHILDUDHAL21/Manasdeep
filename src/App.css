@@ -907,6 +907,50 @@
   border: 1px solid rgba(84, 48, 138, 0.2);
 }
 
+.brand-logo-img {
+  height: 42px;
+  width: 42px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.footer-logo-img {
+  height: 36px;
+  width: 36px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+}
+
+.board-avatar-img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2.5px solid var(--accent-purple);
+  box-shadow: 0 4px 12px rgba(84, 48, 138, 0.15);
+  flex-shrink: 0;
+}
+
+.board-compact-avatar-img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-purple);
+  box-shadow: 0 3px 10px rgba(84, 48, 138, 0.15);
+  flex-shrink: 0;
+}
+
+.leadership-avatar-img {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--accent-purple);
+  box-shadow: 0 3px 10px rgba(84, 48, 138, 0.15);
+  flex-shrink: 0;
+}
+
 .board-member-name {
   font-family: var(--font-serif);
   font-size: 1.45rem;
