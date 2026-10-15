@@ -36,6 +36,8 @@ import imgSameerKedar from './assets/Sameer Kedar.jpeg';
 import imgBhagwatKate from './assets/Bhagwat Kate.jpeg';
 import imgNageshGawali from './assets/NageshGawali (Counselor).jpeg';
 import imgRushikeshMadale from './assets/Rushikesh Madale.jpeg';
+import imgSwapnaliPingale from './assets/Swapnali_pingale.jpeg';
+import imgManasiKulkarni from './assets/MansiKulkarni.png';
 import './App.css';
 
 const boardMembers = [
@@ -142,6 +144,16 @@ const leadershipTeam = [
     areaLabel: 'Areas of Focus'
   },
   {
+    id: 'lead-swapnali',
+    name: 'Swapnali Gorakshanath Pingale',
+    role: 'Operations & Administrative Head',
+    badge: 'Operations & Administrative Head | Psychology Professional',
+    image: imgSwapnaliPingale,
+    bio: 'Swapnali Gorakshanath Pingale is a Psychology professional with over 4 years of experience in team management, coordination, administration, and people-focused operations. With a background in psychology, she brings a people-centric approach to organizational management, team development, and community-oriented initiatives. As the Operations & Administrative Head of the Foundation, she is responsible for coordinating day-to-day operations, supporting team management, strengthening internal processes, and facilitating the effective implementation of various social and mental health initiatives. She is committed to contributing to a better society by promoting collaboration, responsible management, mental well-being, and meaningful community engagement.',
+    areas: ['Operations & Administration', 'Team Management', 'HR & People Coordination', 'Psychology', 'Community Development', 'Mental Health & Well-being'],
+    areaLabel: 'Areas of Focus'
+  },
+  {
     id: 'lead-bhagwat',
     name: 'Bhagwat Laxman Kate',
     role: 'Team Leader',
@@ -160,6 +172,16 @@ const leadershipTeam = [
     bio: 'Nagesh Gawali is a Counselling Psychologist with a Master’s degree in Clinical Psychology and a Postgraduate Diploma in Guidance and Counselling. He is committed to providing professional, compassionate, and client-centred psychological support to individuals navigating personal, emotional, behavioural, and interpersonal challenges. At Manasdeep Foundation, he contributes to counselling services, psychological awareness initiatives, and community-based mental health programs. His approach focuses on creating a safe, empathetic, confidential, and non-judgmental environment where individuals can express themselves openly, gain greater self-understanding, and develop healthier ways of coping with life’s challenges. His counselling approach is client-centred and evidence-informed, with an emphasis on practical coping strategies, emotional well-being, self-awareness, and sustainable personal growth. Through his work, he aims to promote greater awareness of mental health and make psychological support more accessible and approachable within the community.',
     areas: ['Individual Counselling & Psychological Support', 'Emotional Well-being & Stress Management', 'Personal Growth & Self-Awareness', 'Guidance & Counselling', 'Mental Health Awareness Programs'],
     areaLabel: 'Areas of Contribution'
+  },
+  {
+    id: 'lead-manasi',
+    name: 'Manasi Kulkarni',
+    role: 'Sports Psychologist',
+    badge: 'Sports Psychologist | EAP Facilitator',
+    image: imgManasiKulkarni,
+    bio: 'Manasi Kulkarni is a Psychologist with a Master’s degree in Clinical Psychology and a Diploma in Sports Psychology, with experience in counselling, behavioural intervention, and psychological support. Her work in sports psychology focuses on athlete well-being, motivation, goal setting, confidence, resilience, stress management, and mindfulness. As an EAP Facilitator, she focuses on workplace mental health, counselling, stress management, and emotional well-being, supporting individuals in navigating personal and professional challenges.',
+    areas: ['Sports Psychology', 'Athlete Well-being', 'Performance & Motivation', 'Resilience', 'Counselling', 'Stress Management', 'Workplace Mental Health', 'EAP Facilitation'],
+    areaLabel: 'Areas of Focus'
   },
   {
     id: 'lead-rushikesh-m',
@@ -184,15 +206,18 @@ export function App() {
   const [activePage, setActivePage] = useState<string>('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
+  // 10 Core Areas of Work matching official poster
   const focusAreas = [
-    { title: 'Mental Health & Psychological Well-being', icon: <Brain size={22} />, desc: 'Promoting emotional resilience and psychological wellness across all sections of society.' },
-    { title: 'Counselling & Psychotherapy', icon: <Heart size={22} />, desc: 'Professional, ethical, and confidential support tailored to individual and family needs.' },
-    { title: 'Career Guidance & Life Skills', icon: <GraduationCap size={22} />, desc: 'Empowering youth with direction, emotional intelligence, leadership, and soft skills.' },
-    { title: 'Employee Assistance Programs (EAP)', icon: <Briefcase size={22} />, desc: 'Delivering corporate stress management and employee mental health initiatives.' },
-    { title: 'School & College Mental Health', icon: <BookOpen size={22} />, desc: 'Conducting workshops for students, parents, and teachers to build supportive environments.' },
-    { title: 'Women, Children & Senior Support', icon: <Users size={22} />, desc: 'Dedicated programs for vulnerable demographics, healthy ageing, and emotional care.' },
-    { title: 'Addiction Awareness & Rehabilitation', icon: <LifeBuoy size={22} />, desc: 'Substance abuse education, tobacco/alcohol counselling, and suicide prevention.' },
-    { title: 'Community Development & Social Welfare', icon: <Globe size={22} />, desc: 'Outreach initiatives in rural, urban, and tribal areas across Maharashtra and India.' }
+    { title: 'Mental Health Awareness', icon: <Brain size={22} />, desc: 'Promoting mental well-being and breaking the stigma around mental health.' },
+    { title: 'Psychological Counselling', icon: <Heart size={22} />, desc: 'Providing professional counselling and emotional support for all age groups.' },
+    { title: 'Education Support', icon: <BookOpen size={22} />, desc: 'Supporting students with educational resources and learning opportunities.' },
+    { title: 'Career Guidance', icon: <GraduationCap size={22} />, desc: 'Guiding students and professionals towards better career choices.' },
+    { title: 'Family & Relationship Counselling', icon: <Users size={22} />, desc: 'Strengthening relationships and building healthier families.' },
+    { title: 'Child & Adolescent Development', icon: <Smile size={22} />, desc: 'Supporting children and adolescents for their emotional and psychological growth.' },
+    { title: 'Elderly Mental Health', icon: <HandHeart size={22} />, desc: 'Providing emotional care and support for the mental well-being of our elders.' },
+    { title: 'Addiction Awareness', icon: <LifeBuoy size={22} />, desc: 'Creating awareness and promoting a healthy, addiction-free community.' },
+    { title: 'Rehabilitation Services', icon: <ShieldCheck size={22} />, desc: 'Supporting individuals on their journey to recovery and a better future.' },
+    { title: 'Community Development', icon: <Globe size={22} />, desc: 'Working together to build compassionate, inclusive, and empowered communities.' }
   ];
 
   const objectivesList = [
@@ -251,16 +276,22 @@ export function App() {
 
   return (
     <div className="app-wrapper">
-      {/* Top Helpline Banner */}
+      {/* Top Helpline Banner with Lanyard / ID Card Brand Slogans */}
       <div className="top-bar">
         <div className="top-bar-left">
-          <Sparkles size={14} style={{ color: 'var(--accent-purple)' }} />
-          <span>Manasdeep Helpline: Confidential Mental Health Support & Counselling</span>
+          <span className="top-motto-pill">BE KIND • BE AWARE • BE THE CHANGE</span>
+          <span style={{ color: 'rgba(255, 255, 255, 0.35)' }}>|</span>
+          <span style={{ color: '#ffffff' }}>Helpline Support</span>
+        </div>
+        <div className="top-bar-motto-center">
+          KIND MINDS <span className="heart-dot">💛</span> STRONGER COMMUNITIES
         </div>
         <div className="top-bar-right">
           <a className="top-bar-link" onClick={() => navigateToPage('contact')}>Contact Us</a>
-          <span style={{ color: 'var(--border-light)' }}>|</span>
-          <span style={{ fontWeight: 600, color: 'var(--accent-purple)' }}>+91 70836 11222 • Pune, India</span>
+          <span style={{ color: 'rgba(200, 147, 50, 0.4)' }}>|</span>
+          <span style={{ fontWeight: 600, color: 'var(--brand-gold-light)' }}>
+            +91 88052 63733 • Bhor, Pune
+          </span>
         </div>
       </div>
 
@@ -270,7 +301,7 @@ export function App() {
           <img src={mlogo} alt="Manasdeep Foundation Logo" className="brand-logo-img" />
           <div>
             <div className="brand-text-title">Manasdeep Foundation</div>
-            <div className="brand-text-sub">Empowering Minds, Enriching Lives.</div>
+            <div className="brand-text-sub">Lighting Minds, Transforming Lives.</div>
           </div>
         </div>
 
@@ -419,24 +450,29 @@ export function App() {
         </div>
       )}
 
+      {/* Lanyard Dynamic Wave Gradient Line */}
+      <div className="lanyard-gradient-bar" />
+
       {/* MULTI-PAGE VIEW MAIN CONTAINER */}
       <main>
         {/* PAGE 1: HOME */}
         {activePage === 'home' && (
           <div className="page-view">
             <section id="hero" className="hero-section">
-              <div className="hero-pill-badge">
-                <Sparkles size={14} /> Non-Profit Mental Health & Social Development Organization
+              <div className="hero-motto-stack">
+                <Sparkles size={14} style={{ color: 'var(--brand-gold)' }} />
+                <span>People Support People • Create Brighter Tomorrows</span>
               </div>
               <h1 className="hero-title-main">
                 Building Stronger Minds.<br />
-                <span style={{ color: 'var(--accent-purple)' }}>Healthier Communities. Brighter Futures.</span>
+                <span style={{ color: 'var(--brand-gold)' }}>Healthier Communities. Brighter Futures.</span>
               </h1>
+              <div className="hero-script-tag">“A Healthier Tomorrow Together”</div>
+              <div className="gold-heart-divider">
+                <span className="gold-heart-icon">💛</span>
+              </div>
               <p className="hero-subtitle-text">
-                Manasdeep Foundation is a non-profit organization committed to promoting mental health, psychological well-being, education, social development, and community empowerment. We believe that every individual deserves access to quality mental health support, guidance, and opportunities to live a healthy, meaningful, and dignified life.
-              </p>
-              <p style={{ fontSize: '1.05rem', color: 'var(--text-secondary)', maxWidth: '820px', margin: '0 auto 2rem', lineHeight: 1.7 }}>
-                Through counselling, awareness programs, educational initiatives, rehabilitation support, employee wellness programs, research, and community outreach, we strive to create a mentally healthier and socially inclusive society. Together, we can break stigma, build resilience, and transform lives.
+                Manasdeep Foundation is committed to promoting psychological well-being, accessible counselling, and empowered communities across Maharashtra and India. We believe every individual deserves quality mental health support, emotional resilience, and opportunities to thrive.
               </p>
 
               <div className="hero-cta-buttons">
@@ -445,7 +481,7 @@ export function App() {
                   className="btn btn-primary-filled"
                   onClick={() => navigateToPage('contact')}
                 >
-                  Donate Now <ArrowRight size={16} />
+                  Contact Us <ArrowRight size={16} />
                 </button>
                 <button
                   id="hero-volunteer-btn"
@@ -455,14 +491,34 @@ export function App() {
                   Become a Volunteer →
                 </button>
               </div>
+
+              <div className="hero-pillars-ribbon">
+                <span>Support</span>
+                <span className="heart-dot">💛</span>
+                <span>Awareness</span>
+                <span className="heart-dot">💛</span>
+                <span>Empowerment</span>
+                <span className="heart-dot">💛</span>
+                <span>Resilience</span>
+              </div>
+
+              {/* Signature Navy & Gold Quote Ribbon - Lanyard & Poster Inspired */}
+              <div className="quote-ribbon-navy" style={{ marginTop: '2.5rem' }}>
+                <p className="quote-ribbon-text">
+                  “ Mental Well-Being for a <span className="quote-ribbon-gold">Brighter Tomorrow</span> ”
+                </p>
+                <div className="quote-ribbon-sub">
+                  Together For A Better Tomorrow • Lighting Minds, Transforming Lives
+                </div>
+              </div>
             </section>
 
             {/* Quick Core Thrust Areas */}
             <section className="about-section" style={{ background: '#ffffff' }}>
               <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
                 <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 2.5rem' }}>
-                  <span className="section-label">Core Thrust Areas</span>
-                  <h2 className="section-heading-serif">Our Focus Areas</h2>
+                  <span className="section-label">Core Pillars of Action</span>
+                  <h2 className="section-heading-serif">Our Areas of Work</h2>
                   <p style={{ color: 'var(--text-secondary)' }}>
                     Targeted initiatives designed to foster emotional resilience, mental wellness, and community upliftment across demographics.
                   </p>
@@ -490,20 +546,20 @@ export function App() {
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', maxWidth: '1200px', margin: '0 auto' }}>
                 <div className="card-clean" style={{ padding: '2rem', textAlign: 'center' }}>
-                  <Users size={36} style={{ color: 'var(--accent-purple)', marginBottom: '1rem' }} />
-                  <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}>Board of Directors</h3>
+                  <Users size={36} style={{ color: 'var(--brand-gold)', marginBottom: '1rem' }} />
+                  <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem', color: 'var(--brand-navy)' }}>Board of Directors</h3>
                   <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '1.25rem' }}>Meet our governing body, founder, president, and executive board members.</p>
                   <button className="btn btn-secondary-white" onClick={() => navigateToPage('board')}>View Governing Body →</button>
                 </div>
                 <div className="card-clean" style={{ padding: '2rem', textAlign: 'center' }}>
-                  <Award size={36} style={{ color: 'var(--accent-purple)', marginBottom: '1rem' }} />
-                  <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}>Leadership Team</h3>
+                  <Award size={36} style={{ color: 'var(--brand-gold)', marginBottom: '1rem' }} />
+                  <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem', color: 'var(--brand-navy)' }}>Leadership Team</h3>
                   <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '1.25rem' }}>Explore our clinical psychologists, counsellors, and operational experts.</p>
                   <button className="btn btn-secondary-white" onClick={() => navigateToPage('leadership')}>View Leadership Team →</button>
                 </div>
                 <div className="card-clean" style={{ padding: '2rem', textAlign: 'center' }}>
-                  <Heart size={36} style={{ color: 'var(--accent-purple)', marginBottom: '1rem' }} />
-                  <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}>Our Services</h3>
+                  <Heart size={36} style={{ color: 'var(--brand-gold)', marginBottom: '1rem' }} />
+                  <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem', color: 'var(--brand-navy)' }}>Our Services</h3>
                   <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', marginBottom: '1.25rem' }}>Individual, family, student, and employee assistance counselling programs.</p>
                   <button className="btn btn-secondary-white" onClick={() => navigateToPage('services')}>View Services →</button>
                 </div>
@@ -535,39 +591,49 @@ export function App() {
 
                 <div className="card-clean" style={{ padding: '2.5rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem' }}>
-                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--accent-purple-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-purple)' }}>
+                    <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'var(--brand-navy-bg)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--brand-gold)' }}>
                       <Award size={24} />
                     </div>
                     <div>
-                      <h3 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)' }}>Manasdeep Foundation</h3>
-                      <div style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>Empowering Minds, Enriching Lives.</div>
+                      <h3 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-serif)', color: 'var(--brand-navy)' }}>Manasdeep Foundation</h3>
+                      <div style={{ fontSize: '0.85rem', color: 'var(--brand-gold-dark)', fontWeight: 600 }}>Lighting Minds, Transforming Lives.</div>
                     </div>
                   </div>
 
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', borderTop: '1px solid var(--border-light)', paddingTop: '1.5rem' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                      <CheckCircle2 size={18} style={{ color: 'var(--accent-purple)' }} />
+                      <CheckCircle2 size={18} style={{ color: 'var(--brand-gold)' }} />
                       <span>Licensed & Certified Mental Health Professionals</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                      <CheckCircle2 size={18} style={{ color: 'var(--accent-purple)' }} />
+                      <CheckCircle2 size={18} style={{ color: 'var(--brand-gold)' }} />
                       <span>Confidential & Non-Judgmental Therapy Support</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                      <CheckCircle2 size={18} style={{ color: 'var(--accent-purple)' }} />
+                      <CheckCircle2 size={18} style={{ color: 'var(--brand-gold)' }} />
                       <span>Corporate Employee Assistance Programs (EAP)</span>
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.95rem' }}>
-                      <CheckCircle2 size={18} style={{ color: 'var(--accent-purple)' }} />
+                      <CheckCircle2 size={18} style={{ color: 'var(--brand-gold)' }} />
                       <span>Community & Rural Mental Health Clinics</span>
                     </div>
                   </div>
                 </div>
               </div>
+
+              {/* Flyer Quote Banner */}
+              <div className="quote-ribbon-navy">
+                <p className="quote-ribbon-text">
+                  “ Every dream begins with <span className="quote-ribbon-gold">hope</span>. Every change begins with <span className="quote-ribbon-gold">us</span>. ”
+                </p>
+                <div className="quote-ribbon-sub">
+                  A small act of kindness today can create a lifetime of hope tomorrow.
+                </div>
+              </div>
             </section>
 
             {/* Vision & Mission */}
-            <section className="vision-section">
+            <section className="vision-section" style={{ padding: '4.5rem 2rem' }}>
               <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
                 <span className="section-label">Guiding Principles</span>
                 <h2 className="section-heading-serif">Our Vision & Mission</h2>
@@ -577,7 +643,7 @@ export function App() {
                 <div className="vm-card-white card-clean">
                   <span className="vm-badge-number">V</span>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                    <Sparkles size={24} style={{ color: 'var(--accent-purple)' }} />
+                    <Sparkles size={24} style={{ color: 'var(--brand-gold)' }} />
                     <h3 className="vm-card-title" style={{ margin: 0 }}>Our Vision</h3>
                   </div>
                   <p className="vm-card-text">
@@ -588,7 +654,7 @@ export function App() {
                 <div className="vm-card-white card-clean">
                   <span className="vm-badge-number">M</span>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-                    <Heart size={24} style={{ color: 'var(--accent-purple)' }} />
+                    <Heart size={24} style={{ color: 'var(--brand-gold)' }} />
                     <h3 className="vm-card-title" style={{ margin: 0 }}>Our Mission</h3>
                   </div>
                   <p className="vm-card-text">
@@ -627,8 +693,13 @@ export function App() {
                         )}
                         <div>
                           <h3 className="board-member-name">{member.name}</h3>
+                          <div className="id-designation-label">Governing Body</div>
                           <div className="board-role-badge">{member.badge}</div>
                         </div>
+                      </div>
+
+                      <div className="gold-heart-divider" style={{ margin: '0.5rem 0 0.85rem' }}>
+                        <span className="gold-heart-icon">💛</span>
                       </div>
 
                       <div className="board-member-bio">
@@ -639,7 +710,7 @@ export function App() {
 
                       {member.vision && (
                         <div className="vision-quote-box">
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', color: 'var(--accent-purple)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem', color: 'var(--brand-gold)', fontWeight: 700, fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
                             <Quote size={16} /> His Vision
                           </div>
                           <p className="vision-quote-text">{member.vision}</p>
@@ -667,8 +738,13 @@ export function App() {
                         )}
                         <div>
                           <h3 className="board-member-name" style={{ fontSize: '1.3rem' }}>{member.name}</h3>
+                          <div className="id-designation-label">Governing Body</div>
                           <div className="board-role-badge">{member.badge}</div>
                         </div>
+                      </div>
+
+                      <div className="gold-heart-divider" style={{ margin: '0.5rem 0 0.85rem' }}>
+                        <span className="gold-heart-icon">💛</span>
                       </div>
 
                       <div className="board-member-bio" style={{ fontSize: '0.95rem' }}>
@@ -691,8 +767,12 @@ export function App() {
               <div style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 3rem' }}>
                 <span className="section-label">Clinical & Operational Experts</span>
                 <h2 className="section-heading-serif">Manasdeep Foundation Leadership Team</h2>
+                <div className="hero-script-tag" style={{ fontSize: '1.85rem', marginBottom: '0.25rem' }}>“A Healthier Tomorrow Together”</div>
+                <div className="gold-heart-divider">
+                  <span className="gold-heart-icon">💛</span>
+                </div>
                 <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem' }}>
-                  Our multidisciplinary team of clinical psychologists, counsellors, advisors, and social development experts working together for community well-being.
+                  Our multidisciplinary team of clinical psychologists, sports psychologists, counsellors, operational heads, advisors, and social development experts working together for community well-being.
                 </p>
               </div>
 
@@ -710,13 +790,18 @@ export function App() {
                         )}
                         <div>
                           <h3 className="leadership-name">{leader.name}</h3>
-                          <div className="leadership-badge">{leader.badge}</div>
+                          <div className="id-designation-label">Designation</div>
+                          <div className="id-role-name">{leader.role}</div>
                         </div>
+                      </div>
+
+                      <div className="gold-heart-divider" style={{ margin: '0.4rem 0 0.85rem' }}>
+                        <span className="gold-heart-icon">💛</span>
                       </div>
 
                       {leader.credentials && (
                         <div className="leadership-credentials">
-                          <Award size={15} style={{ flexShrink: 0, color: 'var(--accent-purple)' }} />
+                          <Award size={15} style={{ flexShrink: 0, color: 'var(--brand-gold)' }} />
                           <span>{leader.credentials}</span>
                         </div>
                       )}
@@ -761,7 +846,7 @@ export function App() {
                 {objectivesList.map((obj, idx) => (
                   <div key={idx} className="objective-card-item">
                     <div className="objective-card-header">
-                      <div style={{ color: 'var(--accent-purple)' }}>{obj.icon}</div>
+                      <div style={{ color: 'var(--brand-gold)' }}>{obj.icon}</div>
                       <h3 className="objective-card-title">{obj.title}</h3>
                     </div>
                     <ul className="objective-card-list">
@@ -793,9 +878,9 @@ export function App() {
                   <div key={idx} className="focus-card-clean" style={{ justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.85rem' }}>
                       <div className="focus-icon-box" style={{ width: '36px', height: '36px' }}>
-                        <Heart size={18} />
+                        <Heart size={18} style={{ color: 'var(--brand-gold)' }} />
                       </div>
-                      <span style={{ fontWeight: 600, fontSize: '0.98rem', color: 'var(--text-primary)' }}>
+                      <span style={{ fontWeight: 600, fontSize: '0.98rem', color: 'var(--brand-navy)' }}>
                         {service}
                       </span>
                     </div>
@@ -804,7 +889,7 @@ export function App() {
                       style={{ padding: '4px 12px', fontSize: '0.78rem', borderRadius: 'var(--radius-pill)' }}
                       onClick={() => navigateToPage('contact')}
                     >
-                      Book →
+                      Inquire →
                     </button>
                   </div>
                 ))}
@@ -819,10 +904,10 @@ export function App() {
             <section className="about-section">
               <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
                 <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 2.5rem' }}>
-                  <span className="section-label">Our Strengths</span>
-                  <h2 className="section-heading-serif">Why Choose Manasdeep Foundation?</h2>
+                  <span className="section-label">Our Guiding Purpose</span>
+                  <h2 className="section-heading-serif">Why We Exist</h2>
                   <p style={{ color: 'var(--text-secondary)' }}>
-                    We are committed to delivering compassionate, evidence-based, and confidential care to build resilient individuals and communities.
+                    We believe in a world where everyone has the support to thrive. Every dream begins with hope.
                   </p>
                 </div>
 
@@ -830,10 +915,10 @@ export function App() {
                   {whyChooseList.map((item, idx) => (
                     <div key={idx} className="why-card-clean">
                       <div className="focus-icon-box" style={{ flexShrink: 0 }}>
-                        <CheckCircle2 size={22} />
+                        <CheckCircle2 size={22} style={{ color: 'var(--brand-gold)' }} />
                       </div>
                       <div>
-                        <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
+                        <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--brand-navy)', marginBottom: '0.35rem' }}>
                           {item.title}
                         </h3>
                         <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
@@ -842,6 +927,16 @@ export function App() {
                       </div>
                     </div>
                   ))}
+                </div>
+
+                {/* Banner from Poster 1 */}
+                <div className="quote-ribbon-navy">
+                  <p className="quote-ribbon-text">
+                    “ We believe in a world where everyone has the <span className="quote-ribbon-gold">support to thrive</span>. ”
+                  </p>
+                  <div className="quote-ribbon-sub">
+                    Be Kind • Be Aware • Be the Change
+                  </div>
                 </div>
               </div>
             </section>
@@ -865,9 +960,9 @@ export function App() {
                   <div key={idx} className="involved-card-clean">
                     <div>
                       <div className="focus-icon-box" style={{ margin: '0 auto 1.25rem', width: '52px', height: '52px' }}>
-                        <HandHeart size={26} />
+                        <HandHeart size={26} style={{ color: 'var(--brand-gold)' }} />
                       </div>
-                      <h3 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-serif)', marginBottom: '0.6rem', color: 'var(--accent-purple)' }}>
+                      <h3 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-serif)', marginBottom: '0.6rem', color: 'var(--brand-navy)' }}>
                         {opt.title}
                       </h3>
                       <p style={{ fontSize: '0.92rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
@@ -894,29 +989,96 @@ export function App() {
           <div className="page-view">
             <section className="about-section" style={{ background: '#ffffff' }}>
               <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-                <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 3rem' }}>
-                  <span className="section-label">Get In Touch</span>
+                <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 2.5rem' }}>
+                  <span className="section-label">Official Communication</span>
                   <h2 className="section-heading-serif">Contact Manasdeep Foundation</h2>
+                  <div className="hero-script-tag" style={{ fontSize: '1.9rem', marginBottom: '0.25rem' }}>“A Healthier Tomorrow Together”</div>
+                  <div className="gold-heart-divider">
+                    <span className="gold-heart-icon">💛</span>
+                  </div>
                   <p style={{ color: 'var(--text-secondary)' }}>
-                    Have questions or need psychological support? Reach out to our team today.
+                    Have questions, need psychological support, or wish to collaborate? Reach out to our team today.
                   </p>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', marginBottom: '3rem' }}>
-                  <div className="card-clean" style={{ padding: '2rem', textAlign: 'center' }}>
-                    <MapPin size={32} style={{ color: 'var(--accent-purple)', marginBottom: '1rem' }} />
-                    <h3 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}>Our Location</h3>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>Pune, Maharashtra, India</p>
+                {/* ID Card 'GET IN TOUCH' Dedicated Box */}
+                <div className="id-contact-container">
+                  <div className="id-get-in-touch-header">
+                    <div className="id-get-in-touch-title">
+                      GET IN TOUCH
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', color: 'var(--brand-gold-light)', fontWeight: 600 }}>
+                      <Sparkles size={14} style={{ color: 'var(--brand-gold)' }} />
+                      <span>MANASDEEP FOUNDATION</span>
+                    </div>
                   </div>
-                  <div className="card-clean" style={{ padding: '2rem', textAlign: 'center' }}>
-                    <Phone size={32} style={{ color: 'var(--accent-purple)', marginBottom: '1rem' }} />
-                    <h3 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}>Helpline Phones</h3>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>+91 70836 11222<br />+91 88052 63733</p>
+
+                  <div className="id-contact-body">
+                    <div className="id-contact-item">
+                      <div className="id-icon-circle-gold">
+                        <Phone size={18} />
+                      </div>
+                      <div>
+                        <div className="id-contact-item-title">Helpline Phones</div>
+                        <div className="id-contact-item-desc">+91 88052 63733<br />+91 70836 11222</div>
+                      </div>
+                    </div>
+
+                    <div className="id-contact-item">
+                      <div className="id-icon-circle-gold">
+                        <Mail size={18} />
+                      </div>
+                      <div>
+                        <div className="id-contact-item-title">Email Addresses</div>
+                        <div className="id-contact-item-desc">manasdeepfoundation@gmail.com<br />contact@manasdeepfoundation.org</div>
+                      </div>
+                    </div>
+
+                    <div className="id-contact-item">
+                      <div className="id-icon-circle-gold">
+                        <MapPin size={18} />
+                      </div>
+                      <div>
+                        <div className="id-contact-item-title">Registered Office</div>
+                        <div className="id-contact-item-desc">Kamthadi, Tal. Bhor,<br />Dist. Pune, Maharashtra 412206</div>
+                      </div>
+                    </div>
+
+                    <div className="id-contact-item">
+                      <div className="id-icon-circle-gold">
+                        <Globe size={18} />
+                      </div>
+                      <div>
+                        <div className="id-contact-item-title">Official Website & Socials</div>
+                        <div className="id-contact-item-desc">
+                          www.manasdeepfoundation.org<br />
+                          <span style={{ fontSize: '0.85rem', color: 'var(--brand-gold-dark)' }}>/manasdeepfoundation (IG, FB, LinkedIn, YT)</span>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  <div className="card-clean" style={{ padding: '2rem', textAlign: 'center' }}>
-                    <Mail size={32} style={{ color: 'var(--accent-purple)', marginBottom: '1rem' }} />
-                    <h3 style={{ fontSize: '1.2rem', fontFamily: 'var(--font-serif)', marginBottom: '0.5rem' }}>Email Support</h3>
-                    <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem' }}>contact@manasdeepfoundation.org</p>
+
+                  <div style={{ padding: '0.9rem 2rem', background: '#fbfcfd', borderTop: '1px solid var(--border-light)', display: 'flex', alignItems: 'center', gap: '0.75rem', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                    <HandHeart size={20} style={{ color: 'var(--brand-gold)', flexShrink: 0 }} />
+                    <span>Official registered entity dedicated to mental healthcare, accessible counselling, and community empowerment.</span>
+                  </div>
+
+                  <div className="id-card-footer-strip">
+                    <span>SUPPORT</span>
+                    <span className="heart-dot">💛</span>
+                    <span>AWARENESS</span>
+                    <span className="heart-dot">💛</span>
+                    <span>EMPOWERMENT</span>
+                  </div>
+                </div>
+
+                {/* Banner from Raksha Bandhan flyer */}
+                <div className="quote-ribbon-navy" style={{ marginTop: '2.5rem' }}>
+                  <p className="quote-ribbon-text">
+                    “ When we protect each other’s well-being, we create a <span className="quote-ribbon-gold">stronger, happier world</span>. ”
+                  </p>
+                  <div className="quote-ribbon-sub">
+                    Be Kind • Be Aware • Be the Change
                   </div>
                 </div>
               </div>
@@ -931,8 +1093,10 @@ export function App() {
           <div className="footer-brand-info">
             <img src={mlogo} alt="Manasdeep Foundation Logo" className="footer-logo-img" />
             <div>
-              <div style={{ fontWeight: 600, color: 'var(--accent-purple)', fontSize: '0.92rem' }}>Manasdeep Foundation</div>
-              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>© {new Date().getFullYear()} All rights reserved.</div>
+              <div style={{ fontWeight: 700, color: '#ffffff', fontSize: '0.95rem' }}>Manasdeep Foundation</div>
+              <div style={{ fontSize: '0.74rem', color: 'var(--brand-gold-light)' }}>
+                Lighting Minds, Transforming Lives. © {new Date().getFullYear()}
+              </div>
             </div>
           </div>
 
@@ -947,24 +1111,30 @@ export function App() {
           </ul>
 
           <div className="footer-right-details">
-            <span>+91 70836 11222 • Pune</span>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
-              <a href="#" style={{ color: 'var(--text-muted)' }} aria-label="Instagram">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <span style={{ color: '#ffffff', fontWeight: 500 }}>+91 88052 63733 • Bhor, Pune</span>
+            <div style={{ display: 'flex', gap: '0.65rem' }}>
+              <a href="#" style={{ color: 'var(--brand-gold)' }} aria-label="Instagram">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                 </svg>
               </a>
-              <a href="#" style={{ color: 'var(--text-muted)' }} aria-label="Facebook">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a href="#" style={{ color: 'var(--brand-gold)' }} aria-label="Facebook">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
               </a>
-              <a href="#" style={{ color: 'var(--text-muted)' }} aria-label="LinkedIn">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <a href="#" style={{ color: 'var(--brand-gold)' }} aria-label="LinkedIn">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+              <a href="#" style={{ color: 'var(--brand-gold)' }} aria-label="YouTube">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                  <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
                 </svg>
               </a>
             </div>

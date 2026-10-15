@@ -1,34 +1,64 @@
 :root {
   --font-serif: 'Fraunces', Georgia, serif;
   --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-script: 'Caveat', cursive, sans-serif;
+  --font-italic: 'Playfair Display', Georgia, serif;
 
-  /* White & Clean Aesthetics Palette */
+  /* Theme: Manasdeep Foundation Official ID & Lanyard Brand System */
   --bg-pure-white: #ffffff;
   --bg-off-white: #f8fafc;
-  --bg-subtle-gray: #f1f5f9;
+  --bg-subtle-gray: #f0f4f9;
   --bg-card: #ffffff;
+  --bg-warm-gold: #fdf9f0;
   
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
+  --text-primary: #0b2545;
+  --text-secondary: #2c4460;
+  --text-muted: #5e748c;
+  --text-light: #8e9fad;
 
-  --accent-purple: #54308a;
-  --accent-purple-light: #6b3fa0;
-  --accent-purple-bg: #f3eef9;
-  --accent-indigo: #4f46e5;
-  --accent-teal: #0f766e;
-  --accent-orange: #ff5a2e;
-  --accent-gold: #f4b942;
-  --accent-green: #16a34a;
+  /* Official Brand Swatches (from Lanyard & ID Card) */
+  /* Swatch 1: Midnight Royal Navy */
+  --brand-navy: #0b2545;
+  --brand-navy-dark: #07182c;
+  --brand-navy-light: #163b6b;
+  --brand-navy-bg: #edf3fa;
 
-  --border-light: #e2e8f0;
-  --border-subtle: #cbd5e1;
-  --border-active: #54308a;
+  /* Swatch 2: Forest Leaf Green (from Logo Tree Canopy) */
+  --brand-green: #2f6944;
+  --brand-green-dark: #235234;
+  --brand-green-light: #3d8657;
+  --brand-green-bg: #eef6f1;
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-card: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.04);
-  --shadow-hover: 0 20px 40px -10px rgba(84, 48, 138, 0.12), 0 8px 16px -4px rgba(15, 23, 42, 0.06);
+  /* Swatch 3: Warm Radiant Gold (Diya Lamp Flame & Dynamic Waves) */
+  --brand-gold: #c89332;
+  --brand-gold-dark: #a2731c;
+  --brand-gold-light: #dfb34f;
+  --brand-gold-bg: #fdf9f0;
+
+  /* Swatch 4: Pure White / Alabaster */
+  --brand-white: #ffffff;
+
+  /* Accent Mappings */
+  --accent-purple: #0b2545;
+  --accent-purple-light: #163b6b;
+  --accent-purple-bg: #edf3fa;
+  --accent-gold: #c89332;
+  --accent-gold-bg: #fdf9f0;
+  --accent-indigo: #0b2545;
+  --accent-teal: #2f6944;
+  --accent-orange: #c89332;
+  --accent-green: #2f6944;
+
+  --border-light: #e1ebf4;
+  --border-subtle: #cad8e6;
+  --border-gold: rgba(200, 147, 50, 0.45);
+  --border-gold-solid: #c89332;
+  --border-active: #0b2545;
+
+  --shadow-sm: 0 1px 3px rgba(11, 37, 69, 0.05);
+  --shadow-card: 0 4px 20px -2px rgba(11, 37, 69, 0.07), 0 2px 6px -1px rgba(11, 37, 69, 0.04);
+  --shadow-hover: 0 20px 40px -10px rgba(11, 37, 69, 0.14), 0 0 0 1px rgba(200, 147, 50, 0.4);
+  --shadow-gold-glow: 0 4px 18px rgba(200, 147, 50, 0.22);
 
   --radius-sm: 8px;
   --radius-md: 16px;
@@ -82,51 +112,52 @@ p {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 28px;
+  padding: 10px 24px;
   border-radius: var(--radius-pill);
   font-family: var(--font-sans);
-  font-weight: 500;
-  font-size: 0.95rem;
+  font-weight: 600;
+  font-size: 0.92rem;
   text-decoration: none;
   cursor: pointer;
   background: transparent;
-  color: var(--accent-purple);
-  border: 1.5px solid var(--accent-purple);
+  color: var(--brand-navy);
+  border: 1.5px solid var(--brand-gold);
   transition: all var(--transition-normal);
 }
 
 .btn:hover {
-  background: var(--accent-purple);
-  color: #ffffff;
-  border-color: var(--accent-purple);
+  background: var(--brand-gold);
+  color: #0c2340;
+  border-color: var(--brand-gold);
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(84, 48, 138, 0.3);
+  box-shadow: 0 8px 20px -4px rgba(197, 155, 39, 0.4);
 }
 
 .btn-primary-filled {
-  background: var(--accent-purple);
+  background: var(--brand-navy);
   color: #ffffff;
-  border-color: var(--accent-purple);
+  border: 1.5px solid var(--brand-gold);
+  box-shadow: 0 4px 14px rgba(12, 35, 64, 0.2);
 }
 
 .btn-primary-filled:hover {
-  background: var(--accent-purple-light);
-  border-color: var(--accent-purple-light);
-  color: #ffffff;
+  background: var(--brand-gold);
+  border-color: var(--brand-gold);
+  color: #0c2340;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(84, 48, 138, 0.4);
+  box-shadow: 0 10px 25px -5px rgba(197, 155, 39, 0.45);
 }
 
 .btn-secondary-white {
   background: #ffffff;
-  color: var(--text-primary);
+  color: var(--brand-navy);
   border: 1.5px solid var(--border-light);
 }
 
 .btn-secondary-white:hover {
-  background: var(--bg-off-white);
-  border-color: var(--border-subtle);
-  color: var(--accent-purple);
+  background: var(--brand-gold-bg);
+  border-color: var(--brand-gold);
+  color: var(--brand-navy);
   transform: translateY(-2px);
 }
 
@@ -142,7 +173,7 @@ p {
 .card-clean:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-hover);
-  border-color: var(--border-subtle);
+  border-color: var(--brand-gold);
 }
 
 /* Custom Scrollbar */
@@ -157,5 +188,67 @@ p {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+  background: var(--brand-gold);
+}
+
+/* ID Card & Lanyard Signature Brand Elements */
+.gold-heart-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin: 0.85rem auto 1.25rem;
+}
+
+.gold-heart-divider::before,
+.gold-heart-divider::after {
+  content: '';
+  height: 1.5px;
+  width: 55px;
+  background: linear-gradient(90deg, transparent, var(--brand-gold));
+}
+
+.gold-heart-divider::after {
+  background: linear-gradient(90deg, var(--brand-gold), transparent);
+}
+
+.gold-heart-icon {
+  color: var(--brand-gold);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.script-flourish {
+  font-family: var(--font-script);
+  font-size: 1.85rem;
+  color: var(--brand-navy);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.script-flourish-gold {
+  font-family: var(--font-script);
+  font-size: 1.85rem;
+  color: var(--brand-gold);
+  line-height: 1.15;
+  font-weight: 600;
+}
+
+.brand-green-badge {
+  background: var(--brand-green-bg);
+  color: var(--brand-green);
+  border: 1px solid rgba(47, 105, 68, 0.25);
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.2rem 0.75rem;
+  border-radius: var(--radius-pill);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.lanyard-gradient-bar {
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand-navy) 0%, var(--brand-navy) 40%, var(--brand-gold) 48%, var(--brand-gold) 52%, var(--brand-green) 60%, var(--brand-navy) 100%);
+  width: 100%;
 }
