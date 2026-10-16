@@ -390,14 +390,16 @@ export function App() {
         </ul>
 
         <div className="header-cta-group">
-          <button
+          <a
             id="nav-volunteer-btn"
             className="btn btn-secondary-white"
             style={{ padding: '6px 14px', fontSize: '0.82rem' }}
-            onClick={() => navigateToPage('involved')}
+            href="https://forms.gle/hWjoc5V3eNWeaPYNA"
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Become a Volunteer
-          </button>
+          </a>
           <button
             id="nav-donate-btn"
             className="btn btn-primary-filled"
@@ -432,13 +434,15 @@ export function App() {
             <li className={`mobile-nav-item ${activePage === 'contact' ? 'active' : ''}`} onClick={() => navigateToPage('contact')}>Contact Us</li>
           </ul>
           <div className="mobile-cta-group">
-            <button
+            <a
               className="btn btn-secondary-white"
               style={{ width: '100%', justifyContent: 'center' }}
-              onClick={() => navigateToPage('involved')}
+              href="https://forms.gle/hWjoc5V3eNWeaPYNA"
+              target="_blank"
+              rel="noopener noreferrer"
             >
               Become a Volunteer
-            </button>
+            </a>
             <button
               className="btn btn-primary-filled"
               style={{ width: '100%', justifyContent: 'center' }}
@@ -483,13 +487,15 @@ export function App() {
                 >
                   Contact Us <ArrowRight size={16} />
                 </button>
-                <button
+                <a
                   id="hero-volunteer-btn"
                   className="btn btn-secondary-white"
-                  onClick={() => navigateToPage('involved')}
+                  href="https://forms.gle/hWjoc5V3eNWeaPYNA"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Become a Volunteer →
-                </button>
+                </a>
               </div>
 
               <div className="hero-pillars-ribbon">
@@ -1030,7 +1036,7 @@ export function App() {
                       </div>
                       <div>
                         <div className="id-contact-item-title">Email Addresses</div>
-                        <div className="id-contact-item-desc">manasdeepfoundation@gmail.com<br />contact@manasdeepfoundation.org</div>
+                        <div className="id-contact-item-desc"><a href="mailto:manasdeepfoundation@gmail.com">manasdeepfoundation@gmail.com</a><br/><a href="mailto:contact@manasdeepfoundation.org">contact@manasdeepfoundation.org</a></div>
                       </div>
                     </div>
 
@@ -1053,6 +1059,13 @@ export function App() {
                         <div className="id-contact-item-desc">
                           www.manasdeepfoundation.org<br />
                           <span style={{ fontSize: '0.85rem', color: 'var(--brand-gold-dark)' }}>/manasdeepfoundation (IG, FB, LinkedIn, YT)</span>
+                        <div className="id-contact-item">
+                          <div className="id-icon-circle-gold"><HandHeart size={18} /></div>
+                          <div>
+                            <div className="id-contact-item-title">Volunteer Form</div>
+                            <div className="id-contact-item-desc"><a href="https://forms.gle/hWjoc5V3eNWeaPYNA" target="_blank" rel="noopener noreferrer">Google Form</a></div>
+                          </div>
+                        </div>
                         </div>
                       </div>
                     </div>
@@ -1113,7 +1126,7 @@ export function App() {
           <div className="footer-right-details">
             <span style={{ color: '#ffffff', fontWeight: 500 }}>+91 88052 63733 • Bhor, Pune</span>
             <div style={{ display: 'flex', gap: '0.65rem' }}>
-              <a href="#" style={{ color: 'var(--brand-gold)' }} aria-label="Instagram">
+              <a href="https://www.instagram.com/manasdeep.foundation01?srtk=Ynp4Y2p1MHhibW01" style={{ color: 'var(--brand-gold)' }} aria-label="Instagram" target="_blank" rel="noopener noreferrer">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
@@ -1124,14 +1137,14 @@ export function App() {
                   <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                 </svg>
               </a>
-              <a href="#" style={{ color: 'var(--brand-gold)' }} aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/manasdeep-foundation/" style={{ color: 'var(--brand-gold)' }} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
                   <rect x="2" y="9" width="4" height="12"></rect>
                   <circle cx="4" cy="4" r="2"></circle>
                 </svg>
               </a>
-              <a href="#" style={{ color: 'var(--brand-gold)' }} aria-label="YouTube">
+              <a href="https://youtube.com/@manasdeepfoundation?si=m6JV0LS-qNhbeRjF" style={{ color: 'var(--brand-gold)' }} aria-label="YouTube" target="_blank" rel="noopener noreferrer">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
                   <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
